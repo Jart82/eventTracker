@@ -1,0 +1,32 @@
+<div class="container m-5">
+  <div class="row">
+    <div class="col-12 m-5">
+      <div class="text-center">
+        <h1>Welcome To My Event Tracker!</h1>
+        <p class="m-4">
+          Stay organized and never miss an important day! Use this awesome event
+          tracker by entering your event date and keeping track of the
+          countdown.
+        </p>
+      </div>
+    </div>
+    <div class="col-6">
+      <input
+        class="form-control"
+        [(ngModel)]="selectedDate"
+        type="date"
+        (change)="count()"
+      />
+    </div>
+    <div class="col-6">
+      <h4 *ngIf="daysDiff === 0">Event day 🎉</h4>
+      <h4 *ngIf="daysDiff !== null && daysDiff < 0">
+        Event is already over 😢
+      </h4>
+      <h4 *ngIf="daysDiff !== null && daysDiff > 0">
+        {{ daysDiff }} days remaining to event 🤞
+      </h4>
+      <h4 *ngIf="daysDiff === null">Select a date</h4>
+    </div>
+  </div>
+</div>
